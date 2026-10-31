@@ -1,0 +1,24 @@
+pipeline:
+  stages:
+    - steps:
+        - run:
+            script: "echo \"=== Building Hello World ===\"\r
+
+              cd Episode-01/hello-world-app\r
+
+              mvn clean package -q\r
+
+              echo \"\"\r
+
+              echo \"=== Running the App ===\"\r
+
+              java -jar target/hello-world-1.0.0.jar\r
+
+              echo \"\"\r
+
+              echo \"=== Pipeline Success! ===\""
+            shell: sh
+          name: run
+          id: run
+      name: dev
+      id: dev
